@@ -1,0 +1,13 @@
+
+/.emacs*
+/auto-save-list/
+/elpa/
+/*~
+/ido.last
+/quelpa/
+/tramp
+/var/
+/transient/
+/tree-sitter/
+/emacs-custom.el
+/#*#
