@@ -61,6 +61,10 @@
 (global-set-key [(control c) (.)] 'org-time-stamp)
 (global-set-key [(control c) (control l)] 'org-store-link) 
 
+(use-package dired
+  :config
+  (when (locate-file "gls" exec-path)
+    (setq insert-directory-program "gls")))
 
 (use-package treesit-auto
   :quelpa
