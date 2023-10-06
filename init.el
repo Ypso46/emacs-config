@@ -1,4 +1,3 @@
-(cua-mode)
 (desktop-save-mode)
 
 ;;set the line-number to true
@@ -43,6 +42,10 @@
 (setq ido-everywhere t)
 (ido-mode 1)
 
+(use-package cua-base
+  :config
+  (cua-mode)
+  (keymap-unset cua-global-keymap "C-<return>" t))
 
 (use-package corfu :quelpa
   :custom
@@ -50,16 +53,16 @@
   :init
   (global-corfu-mode))
 
-(use-package magit :quelpa)
+(use-package magit :quelpa
+  :bind
+  (("C-x v b" . magit-status)
+  ("C-c ." . org-time-stamp)
+  ("C-c C-l" . org-store-link)))
 
 
 (setq mac-option-key-is-meta t)
 (setq mac-right-option-modifier nil)
 
-
-(global-set-key [(control x) (v) (b)] 'magit-status)
-(global-set-key [(control c) (.)] 'org-time-stamp)
-(global-set-key [(control c) (control l)] 'org-store-link) 
 
 (use-package dired
   :config
